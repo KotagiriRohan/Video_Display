@@ -12,4 +12,5 @@ if switch=="ON":
     vid = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     while(True):
         _, frame = vid.read()
+        frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
         position.image(frame)
