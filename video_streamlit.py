@@ -9,8 +9,8 @@ st.write("""
 switch = st.select_slider("Video",options=["OFF","ON"],value="OFF")
 position = st.empty()
 if switch=="ON":
-    vid = cv2.VideoCapture(0)
+    vid = cv2.VideoCapture(0,cv2.CAP_DSHOW)
     while(True):
         _, frame = vid.read()
-        frame = cv2.cvtColor(frame,cv2.COLOR_BGR2RGB)
+        frame = np.array(cv2.cvtColor(frame,cv2.COLOR_BGR2RGB))
         position.image([frame])
